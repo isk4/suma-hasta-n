@@ -1,4 +1,4 @@
-if ARGV.length == 1 && ARGV[0].delete(".-").match(/[\D]/) == nil
+if ARGV.length == 1 && (ARGV[0].match(/[^\d.-]/) == nil && ARGV[0].match(/\D/, 1) == nil)
     sum = 0
     n = ARGV[0].to_i
     if n > 0
@@ -12,5 +12,5 @@ if ARGV.length == 1 && ARGV[0].delete(".-").match(/[\D]/) == nil
     end
     puts sum
 else
-   puts "INGRESA UN ENTERO POSITIVO"
+   puts "INGRESA UN ENTERO VÁLIDO"
 end
